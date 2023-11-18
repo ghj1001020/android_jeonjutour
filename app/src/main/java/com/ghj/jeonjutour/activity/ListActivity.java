@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 
 import androidx.annotation.Nullable;
 
+import com.ghj.jeonjutour.BuildConfig;
 import com.ghj.jeonjutour.activity.viewmodel.ListViewModel;
 import com.ghj.jeonjutour.databinding.ActivityListBinding;
 
@@ -18,5 +19,6 @@ public class ListActivity extends BaseViewModelActivity<ListViewModel, ActivityL
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 }

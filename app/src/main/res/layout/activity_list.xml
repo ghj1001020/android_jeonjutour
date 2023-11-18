@@ -1,6 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <!-- 검색 -->
+    <LinearLayout
+        android:id="@+id/layoutSearch"
+        android:padding="12dp"
+        android:background="@drawable/bg_search"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnSearchOpt"
+            android:text="전체"
+            style="@style/BtnSelect"
+            android:maxWidth="120dp"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp" />
+
+        <EditText
+            android:id="@+id/editSearch"
+            android:hint="검색어를 입력하세요."
+            style="@style/EditSearch"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="48dp"/>
+
+        <ImageButton
+            android:id="@+id/btnSearch"
+            style="@style/BaseImageBtn"
+            android:src="@drawable/ic_search"
+            android:layout_width="48dp"
+            android:layout_height="48dp" />
+
+    </LinearLayout>
+
+    <!-- 총개수-->
+    <LinearLayout
+        android:background="@drawable/bg_listcnt"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layoutSearch">
+
+        <TextView
+            android:text="총 개수 "
+            style="@style/BaseText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtCount"
+            android:text="0"
+            style="@style/BaseBoldText"
+            android:layout_marginStart="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="개"
+            style="@style/BaseText"
+            android:layout_marginStart="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <!-- 목록 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/txtNodata"
+        style="@style/TxtNoData"
+        android:visibility="visible"
+        android:text="@string/no_data"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

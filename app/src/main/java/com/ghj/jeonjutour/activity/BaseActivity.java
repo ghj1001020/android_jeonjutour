@@ -2,6 +2,7 @@ package com.ghj.jeonjutour.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public abstract class BaseActivity<VB extends ViewBinding> extends AppCompatActivity {
+public abstract class BaseActivity<VB extends ViewBinding> extends AppCompatActivity implements View.OnClickListener {
 
     // 액티비티 요청
     private int mReqCodeActivity = 0;
@@ -71,4 +72,7 @@ public abstract class BaseActivity<VB extends ViewBinding> extends AppCompatActi
         JJApp.setContext(this);
         JJApp.setActivity(this);
     }
+
+    @Override
+    public void onClick(View v) { }
 }

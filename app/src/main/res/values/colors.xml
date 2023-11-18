@@ -3,14 +3,22 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <!-- 공통 -->
     <color name="main">#ee2e5b</color>
     <color name="green">#35a163</color>
     <color name="green_pressed">#357878</color>
+    <color name="mint">#3abec0</color>
     <color name="blue">#0766AD</color>
 
+    <!-- 배경 -->
     <color name="bg">#ffffff</color>
     <color name="bg_board">#e7ebf0</color>
 
+    <!-- 선 -->
+    <color name="border1">#9DB2BF</color>
+    <color name="border2">#526D82</color>
+
+    <!-- 텍스트 -->
     <color name="text">#1f1f1f</color>
 
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape>
+            <stroke android:color="@color/border2" android:width="1dp" />
+            <corners android:radius="4dp" />
+            <solid android:color="#fff" />
+        </shape>
+    </item>
+
+    <!-- 이미지 영역 -->
+    <item android:drawable="@drawable/ic_arrowdown" android:gravity="center_vertical|right" android:width="15dp" android:height="15dp" android:right="8dp" />
+
+</layer-list>

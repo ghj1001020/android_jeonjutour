@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">전주투어</string>
+
+    <string name="no_data">조회된 정보가 없습니다.</string>
 </resources>

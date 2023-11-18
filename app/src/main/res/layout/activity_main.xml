@@ -24,7 +24,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/btn"
+                android:id="@+id/btnMuseum"
                 android:text="문화체험"
                 style="@style/BtnMenu"
                 android:layout_marginRight="2dp"

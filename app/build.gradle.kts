@@ -1,6 +1,11 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     id("com.android.application")
 }
+
+val properties = gradleLocalProperties(rootDir)
+
 
 android {
     namespace = "com.ghj.jeonjutour"
@@ -15,6 +20,11 @@ android {
     }
 
     buildTypes {
+        val properties = gradleLocalProperties(rootDir)
+        all {
+            buildConfigField("String", "MUSEUM_KEY", properties.getProperty("MUSEUM_KEY"))
+        }
+
         release {
             isMinifyEnabled = true
             proguardFiles(
@@ -25,6 +35,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
