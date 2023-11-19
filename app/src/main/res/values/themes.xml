@@ -29,6 +29,10 @@
         <item name="android:textColor">@color/mint</item>
     </style>
 
+    <style name="TxtTitle" parent="BaseBoldText">
+        <item name="android:textSize">21dp</item>
+    </style>
+
 
 
     <!-- 버튼 -->

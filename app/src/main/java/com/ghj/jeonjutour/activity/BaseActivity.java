@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
@@ -19,6 +20,18 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class BaseActivity<VB extends ViewBinding> extends AppCompatActivity implements View.OnClickListener {
+
+    // 뒤로가기
+    OnBackPressedCallback mBackCallBack = new OnBackPressedCallback(true) {
+        @Override
+        public void handleOnBackPressed() {
+            onBackPressed();
+        }
+    };
+
+    public void onBackPressed() {
+        finish();
+    }
 
     // 액티비티 요청
     private int mReqCodeActivity = 0;
@@ -64,6 +77,9 @@ public abstract class BaseActivity<VB extends ViewBinding> extends AppCompatActi
         JJApp.setActivity(this);
         mBinding = newBinding();
         setContentView(mBinding.getRoot());
+
+        // 뒤로가기
+        getOnBackPressedDispatcher().addCallback(this, mBackCallBack);
     }
 
     @Override

@@ -5,6 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.ghj.jeonjutour.ui.AppBar
+        android:id="@+id/appBar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="목록" />
+
     <!-- 검색 -->
     <LinearLayout
         android:id="@+id/layoutSearch"
@@ -14,7 +21,7 @@
         android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/appBar">
 
         <Button
             android:id="@+id/btnSearchOpt"

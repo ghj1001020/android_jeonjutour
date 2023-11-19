@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 
 import com.ghj.jeonjutour.R;
 import com.ghj.jeonjutour.databinding.ActivityMainBinding;
+import com.ghj.jeonjutour.define.DEFINE;
 
 import java.util.Properties;
 
@@ -30,6 +31,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
     public void onClick(View v) {
         if(v.getId() == R.id.btnMuseum) {
             Intent intent = new Intent(this, ListActivity.class);
+            intent.putExtra("menu", DEFINE.Menu.CULTURE_EXP);
             startActivity(intent);
         }
     }
