@@ -3,6 +3,7 @@ package com.ghj.jeonjutour.retrofit;
 import android.util.Log;
 
 import com.ghj.jeonjutour.BuildConfig;
+import com.ghj.jeonjutour.util.LogUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.tickaroo.tikxml.TikXml;
@@ -43,6 +44,7 @@ public class RetrofitFactory {
         return mRetrofitService;
     }
 
+    // 통신요청, 응답
     public static <T> void execute(Call<T> service, IRetrofitListener<T> listener) {
         service.enqueue(new Callback<T>() {
             @Override
@@ -52,11 +54,17 @@ public class RetrofitFactory {
                         listener.onRetrofitResponse(response.body());
                     }
                 }
+                else {
+
+                }
             }
 
             @Override
             public void onFailure(Call<T> call, Throwable t) {
-                Log.d("ADFADF", "ASDFADSF");
+                if(BuildConfig.DEBUG) {
+                    LogUtil.e(t.getMessage());
+                    t.getStackTrace();
+                }
             }
         });
     }

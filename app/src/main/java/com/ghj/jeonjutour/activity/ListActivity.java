@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 
 import androidx.annotation.Nullable;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.ghj.jeonjutour.activity.viewmodel.ListViewModel;
@@ -29,8 +30,14 @@ public class ListActivity extends BaseViewModelActivity<ListViewModel, ActivityL
         if(getIntent().hasExtra("menu")) {
             getViewModel().MENU_TYPE = getIntent().getIntExtra("menu", 0);
         }
-
+        getViewModel().dataList.observe(this, dataListObserber);
         requestList();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        getViewModel().dataList.removeObserver(dataListObserber);
     }
 
     public void requestList() {
@@ -40,4 +47,8 @@ public class ListActivity extends BaseViewModelActivity<ListViewModel, ActivityL
                 break;
         }
     }
+
+    Observer<Boolean> dataListObserber = aBoolean -> {
+
+    };
 }
