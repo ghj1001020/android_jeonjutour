@@ -1,4 +1,4 @@
-package com.ghj.jeonjutour.activity;
+package com.ghj.jeonjutour.activity.base;
 
 import android.content.Intent;
 import android.os.Bundle;

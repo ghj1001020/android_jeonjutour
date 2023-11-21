@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -51,6 +52,7 @@
 
     <!-- 총개수-->
     <LinearLayout
+        android:id="@+id/layoutCnt"
         android:background="@drawable/bg_listcnt"
         android:orientation="horizontal"
         android:padding="16dp"
@@ -84,20 +86,23 @@
     <!-- 목록 -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
+        app:layout_constraintTop_toBottomOf="@id/layoutCnt"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"/>
+        android:layout_height="0dp"
+        tools:listitem="@layout/item_list"
+        tools:itemCount="1"/>
 
     <TextView
         android:id="@+id/txtNodata"
         style="@style/TxtNoData"
-        android:visibility="visible"
         android:text="@string/no_data"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

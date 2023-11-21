@@ -2,17 +2,15 @@ package com.ghj.jeonjutour.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
 import androidx.annotation.Nullable;
 
 import com.ghj.jeonjutour.R;
+import com.ghj.jeonjutour.activity.base.BaseActivity;
 import com.ghj.jeonjutour.databinding.ActivityMainBinding;
 import com.ghj.jeonjutour.define.DEFINE;
-
-import java.util.Properties;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding> {
 

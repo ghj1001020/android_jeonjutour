@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 
 import androidx.annotation.Nullable;
 
+import com.ghj.jeonjutour.activity.base.BaseActivity;
 import com.ghj.jeonjutour.databinding.ActivityIntroBinding;
 import com.ghj.jeonjutour.util.IntentUtil;
 

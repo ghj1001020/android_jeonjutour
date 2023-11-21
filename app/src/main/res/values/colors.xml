@@ -17,6 +17,7 @@
     <!-- 선 -->
     <color name="border1">#9DB2BF</color>
     <color name="border2">#526D82</color>
+    <color name="divider">#E5E5E5</color>
 
     <!-- 텍스트 -->
     <color name="text">#1f1f1f</color>

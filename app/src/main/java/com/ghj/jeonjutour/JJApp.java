@@ -1,10 +1,9 @@
 package com.ghj.jeonjutour;
 
-import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
-import com.ghj.jeonjutour.activity.BaseActivity;
+import com.ghj.jeonjutour.activity.base.BaseActivity;
 
 import java.lang.ref.WeakReference;
 

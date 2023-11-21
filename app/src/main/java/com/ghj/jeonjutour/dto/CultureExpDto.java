@@ -42,11 +42,11 @@ public class CultureExpDto {
     @Xml(name = "data")
     public static class DataItems {
         @Element(name = "list")
-        List<DataItem> item;
+        public List<CEItem> item;
     }
 
     @Xml
-    public static class DataItem {
+    public static class CEItem extends BaseListDto {
         @PropertyElement(name = "addr")
         public String addr;
         @PropertyElement(name = "addrDtl")
