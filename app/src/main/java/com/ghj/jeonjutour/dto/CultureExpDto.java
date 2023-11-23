@@ -1,10 +1,12 @@
 package com.ghj.jeonjutour.dto;
 
+import com.google.gson.annotations.SerializedName;
 import com.tickaroo.tikxml.annotation.Attribute;
 import com.tickaroo.tikxml.annotation.Element;
 import com.tickaroo.tikxml.annotation.PropertyElement;
 import com.tickaroo.tikxml.annotation.Xml;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,7 +48,7 @@ public class CultureExpDto {
     }
 
     @Xml
-    public static class CEItem extends BaseListDto {
+    public static class CEItem extends BaseListDto implements Serializable {
         @PropertyElement(name = "addr")
         public String addr;
         @PropertyElement(name = "addrDtl")

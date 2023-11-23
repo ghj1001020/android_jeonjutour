@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 
 import com.ghj.jeonjutour.activity.base.BaseRecyclerViewAdapter;
 import com.ghj.jeonjutour.activity.base.BaseRecyclerViewHolder;
+import com.ghj.jeonjutour.activity.base.IItemListener;
 import com.ghj.jeonjutour.activity.viewmodel.ListViewModel;
 import com.ghj.jeonjutour.databinding.ItemListBinding;
 import com.ghj.jeonjutour.dto.BaseListDto;
@@ -25,6 +26,10 @@ public class ListAdapter extends BaseRecyclerViewAdapter {
     public ListAdapter(Context context, ListViewModel model) {
         super(context);
         mViewModel = model;
+    }
+
+    public void setListener(IItemListener listener) {
+        this.Listener = listener;
     }
 
     @NonNull
@@ -51,6 +56,11 @@ public class ListAdapter extends BaseRecyclerViewAdapter {
             mBinding.txtHead.setText(data.LIST_TITLE);
             mBinding.txtBody.setText(data.LIST_BODY);
             mBinding.txtBody.setVisibility(TextUtils.isEmpty(data.LIST_BODY) ? View.GONE : View.VISIBLE);
+            mBinding.layoutItem.setOnClickListener(v -> {
+                if(Listener != null) {
+                    Listener.onItemClicked(position);
+                }
+            });
         }
     }
 }

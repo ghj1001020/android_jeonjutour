@@ -1,6 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <com.ghj.jeonjutour.ui.AppBar
+        android:id="@+id/appBar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="상세" />
+
+    <!-- 제목 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHead"
+        android:padding="12dp"
+        android:background="@drawable/bg_detail_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/appBar">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            style="@style/TxtDetailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="유산문화 체험 타이틀" />
+
+        <TextView
+            android:id="@+id/txtAddress"
+            style="@style/TxtDetailAddr"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="서울특별시 여러분 담배꽁초" />
+
+        <Button
+            android:id="@+id/btnMap"
+            android:text="지도"
+            style="@style/BtnMap"
+            android:layout_width="56dp"
+            android:layout_height="36dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutHead"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- 내용 -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtContents"
+                style="@style/BaseText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="저희 예다원은 2010년 6월에 전주한옥마을 향교길에 둥지를 틀었습니다. ○ 천연염색체험, 전통 차 체험과 함께 전주한옥마을에서"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginTop="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="10dp"
+                    android:background="@drawable/bg_detail1"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/headAddress"
+                        android:text="주소"
+                        style="@style/TxtDetailItem"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/detailAddress"
+                        style="@style/BaseText"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="전북 전주시 완산구 현무 1길"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:padding="10dp"
+                    android:background="@drawable/bg_detail2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/headPhone"
+                        android:text="전화번호"
+                        style="@style/TxtDetailItem"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/detailTel"
+                        style="@style/BaseText"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:padding="10dp"
+                    android:background="@drawable/bg_detail3"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/headHomepage"
+                        android:text="홈페이지"
+                        style="@style/TxtDetailItem"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/detailHomepage"
+                        style="@style/BaseText"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View android:layout_weight="1" android:layout_width="1dp" android:layout_height="0dp" />
+
+            <!-- 이미지 -->
+            <RelativeLayout
+                android:layout_marginTop="56dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/pager"
+                    android:background="@color/bg_board"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp" />
+
+                <ImageButton
+                    android:id="@+id/btnImgPrev"
+                    style="@style/BaseImageBtn"
+                    android:src="@drawable/ic_prev"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp" />
+
+                <ImageButton
+                    android:id="@+id/btnImgNext"
+                    style="@style/BaseImageBtn"
+                    android:src="@drawable/ic_next"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

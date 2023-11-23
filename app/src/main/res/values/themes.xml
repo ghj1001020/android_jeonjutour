@@ -43,6 +43,18 @@
         <item name="android:maxLines">3</item>
     </style>
 
+    <style name="TxtDetailTitle" parent="BaseBoldText">
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="TxtDetailAddr" parent="BaseText">
+        <item name="android:textSize">13dp</item>
+    </style>
+
+    <style name="TxtDetailItem" parent="BaseText">
+        <item name="android:textColor">@color/text_gray</item>
+    </style>
+
 
     <!-- 버튼 -->
     <style name="BaseBtn">
@@ -72,6 +84,12 @@
         <item name="android:paddingEnd">24dp</item>
         <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="BtnMap" parent="BaseBtn">
+        <item name="android:textSize">15dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:background">@drawable/btn_map</item>
     </style>
 
 

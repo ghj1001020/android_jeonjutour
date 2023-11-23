@@ -1,5 +1,6 @@
 package com.ghj.jeonjutour.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.ghj.jeonjutour.activity.adapter.ListAdapter;
 import com.ghj.jeonjutour.activity.base.BaseViewModelActivity;
+import com.ghj.jeonjutour.activity.base.IItemListener;
 import com.ghj.jeonjutour.activity.viewmodel.ListViewModel;
 import com.ghj.jeonjutour.databinding.ActivityListBinding;
 import com.ghj.jeonjutour.define.DEFINE;
@@ -45,6 +47,14 @@ public class ListActivity extends BaseViewModelActivity<ListViewModel, ActivityL
 
     public void initLayout() {
         mListAdapter = new ListAdapter(this, getViewModel());
+        mListAdapter.setListener(new IItemListener() {
+            @Override
+            public void onItemClicked(int position) {
+                Intent intent = new Intent(ListActivity.this, DetailActivity.class);
+                intent.putExtra("detail", getViewModel().cultureExpItems.get(position));
+                startActivity(intent);
+            }
+        });
         mBinding.list.setLayoutManager(new LinearLayoutManager(this));
         mBinding.list.setAdapter(mListAdapter);
     }

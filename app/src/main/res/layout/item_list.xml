@@ -26,12 +26,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layout"
+        <LinearLayout
+            android:id="@+id/layoutItem"
             android:layout_marginStart="8dp"
-            android:gravity="center_vertical"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/chkJjim"
@@ -40,24 +41,19 @@
             <TextView
                 android:id="@+id/txtHead"
                 style="@style/TxtHead"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 tools:text="테스트타이틀 ㅇㅇㅇ"/>
 
             <TextView
                 android:id="@+id/txtBody"
                 style="@style/TxtBody"
-                android:layout_width="0dp"
+                android:layout_marginTop="2dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/txtHead"
-                app:layout_constraintStart_toStartOf="@id/txtHead"
-                app:layout_constraintEnd_toEndOf="@id/txtHead"
                 tools:text="바바바바바바 바ㅏ바바 ㅇㅇㅇ"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
         <ImageButton
             android:id="@+id/btnTel"

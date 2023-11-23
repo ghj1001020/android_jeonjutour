@@ -51,9 +51,14 @@ public class AppBar extends RelativeLayout {
     }
 
     public void initLayout() {
-        mBinding.txtTitle.setText(mTitle);
-        mBinding.btnLeft.setOnClickListener(v -> {
+        mBinding.AppBarTitle.setText(mTitle);
+        mBinding.AppBarBack.setOnClickListener(v -> {
             JJApp.getActivity().onBackPressed();
         });
+    }
+
+    // 타이틀
+    public void setTitle(String title) {
+        mBinding.AppBarTitle.setText(title);
     }
 }
